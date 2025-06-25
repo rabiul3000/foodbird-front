@@ -24,12 +24,12 @@ FoodShare is a full-stack web application designed to reduce food waste and help
 
 ## ✨ Key Features
 
-- 🔐 User authentication via Firebase
-- 🍽️ Food donation, listing, and ordering
-- ⏱️ Time formatting with `date-fns`
-- ⚡ Real-time data fetching using React Query
-- 💡 Smooth UX with SweetAlert2 and React Slick
-- 📱 Fully responsive with TailwindCSS and DaisyUI
+- 🔐 User authentication via Firebase  
+- 🍽️ Food donation, listing, and ordering  
+- ⏱️ Time formatting with `date-fns`  
+- ⚡ Real-time data fetching using React Query  
+- 💡 Smooth UX with SweetAlert2 and React Slick  
+- 📱 Fully responsive with TailwindCSS and DaisyUI  
 
 ---
 
@@ -60,10 +60,10 @@ To run this project on your local machine:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-rabiul3000.git
+git clone https://github.com/rabiul3000/foodbird-front.git
 
 # Navigate into the project
-cd b11a11-client-side-rabiul3000
+cd foodbird-front
 
 # Install dependencies
 npm install
