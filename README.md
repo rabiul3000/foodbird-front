@@ -10,6 +10,14 @@ FoodShare is a full-stack web application designed to reduce food waste and help
 
 ---
 
+## 🔗 Useful Links
+
+- 🌐 **Live Website:** [https://foodbird-4d16e.web.app/](https://foodbird-4d16e.web.app/)
+- 💻 **Repository:** [GitHub Client Repo](https://github.com/rabiul3000/foodbird-front.git)
+- 👤 **Author (LinkedIn):** [Md. Rabiul](https://www.linkedin.com/in/md-rabiul-islam-13904b331/)
+
+---
+
 ## 🛠️ Main Technologies Used
 
 - **React 19**
