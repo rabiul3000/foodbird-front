@@ -1,6 +1,6 @@
-# 🍱 FoodShare
+# 🍱 FoodBird
 
-**FoodShare** is a modern online food delivery and sharing platform where users can **buy**, **sell**, and **donate** food. Inspired by platforms like Uber Eats and Foodpanda, it promotes sustainability by allowing surplus food to reach those in need.
+**FoodBird** is a modern online food delivery and sharing platform where users can **buy**, **sell**, and **donate** food. Inspired by platforms like Uber Eats and Foodpanda, it promotes sustainability by allowing surplus food to reach those in need.
 
 ---
 
