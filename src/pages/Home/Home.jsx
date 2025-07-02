@@ -4,6 +4,7 @@ import FeaturedFoods from "../../components/FeaturedFoods/FeaturedFoods";
 import { Link } from "react-router";
 import LocationCards from "../../components/LocationCards/LocationCards";
 import CampaignPoster from "../../components/CampaignPoster/CampaignPoster";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -29,6 +30,10 @@ const Home = () => {
       </h1>
       <div>
         <CampaignPoster />
+      </div>
+
+      <div>
+        <Footer />
       </div>
     </div>
   );
