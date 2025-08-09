@@ -5,6 +5,9 @@ import { FcGoogle } from "react-icons/fc";
 import { errorAlert, successAlert } from "../../utils/Alerts";
 import AuthContext from "../../../contexts/AuthContext";
 import useAxios from "../../../hooks/useAxios";
+import Lottie from "react-lottie";
+
+import loginAnimation from "../../assets/login_animation.json";
 
 const Login = () => {
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -29,9 +32,7 @@ const Login = () => {
 
         const token = result.user.accessToken;
         get(`/token?email=${result.user.email}`, {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
+          headers: { authorization: `Bearer ${token}` },
         })
           .then((res) => console.log(res))
           .catch((error) => console.log(error));
@@ -64,14 +65,29 @@ const Login = () => {
       });
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loginAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
-    <div className="hero bg-base-200 min-h-[90vh]">
-      <div className="hero-content flex-col w-full">
-        <div className="text-center lg:text-left">
-          <div className="flex flex-col gap-2 justify-center items-center">
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Lottie Background */}
+      <div className="absolute inset-0 z-0">
+        <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
+      </div>
+
+      {/* Login Form (centered) */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
+        <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-6">
+          <div className="text-center mb-4">
             <Link
               to={"/"}
-              className="italic text-secondary flex gap-0 text-2xl font-bold"
+              className="italic text-secondary flex gap-1 justify-center items-center text-2xl font-bold"
             >
               <LuBird size={30} />
               FoodBird
@@ -81,69 +97,68 @@ const Login = () => {
               Welcome Back, please login to continue
             </p>
           </div>
-        </div>
 
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <div className="card-body">
-            <form className="fieldset" onSubmit={handleSubmit}>
-              <label className="label">Email</label>
-              <input
-                name="email"
-                type="email"
-                className="input"
-                placeholder="Email"
-                required
-              />
-              <label className="label">Password</label>
-              <input
-                name="password"
-                type="password"
-                className="input"
-                placeholder="Password"
-                required
-                minLength={"8"}
-              />
-              <div>
-                <Link className="link link-hover" to={"/register"}>
-                  Not yet Member? Register
-                </Link>
-              </div>
-              <button
-                type="submit"
-                disabled={emailLoading}
-                className="btn btn-secondary mt-4"
-              >
-                {emailLoading ? (
-                  <>
-                    Please wait...{" "}
-                    <span className="loading loading-bars loading-sm"> </span>
-                  </>
-                ) : (
-                  "Login With Email"
-                )}
-              </button>
-              <p className="text-lg text-center">or</p>
-              <button
-                onClick={handleLoginWithGoogle}
-                type="button"
-                className="btn bg-white text-black border-[#e5e5e5]"
-                disabled={googleLoading}
-              >
-                {googleLoading ? (
-                  <>
-                    <FcGoogle />
-                    Loading...
-                    <span className="loading loading-bars loading-sm"> </span>
-                  </>
-                ) : (
-                  <>
-                    <FcGoogle />
-                    Login with Google
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <label className="label">Email</label>
+            <input
+              name="email"
+              type="email"
+              className="input w-full"
+              placeholder="Email"
+              required
+            />
+            <label className="label mt-2">Password</label>
+            <input
+              name="password"
+              type="password"
+              className="input w-full"
+              placeholder="Password"
+              required
+              minLength="8"
+            />
+            <div className="mt-2">
+              <Link className="link link-hover" to={"/register"}>
+                Not yet Member? Register
+              </Link>
+            </div>
+
+            <button
+              type="submit"
+              disabled={emailLoading}
+              className="btn btn-secondary mt-4 w-full"
+            >
+              {emailLoading ? (
+                <>
+                  Please wait...
+                  <span className="loading loading-bars loading-sm"></span>
+                </>
+              ) : (
+                "Login With Email"
+              )}
+            </button>
+
+            <p className="text-lg text-center my-2">or</p>
+
+            <button
+              onClick={handleLoginWithGoogle}
+              type="button"
+              className="btn bg-white text-black border-[#e5e5e5] w-full"
+              disabled={googleLoading}
+            >
+              {googleLoading ? (
+                <>
+                  <FcGoogle />
+                  Loading...
+                  <span className="loading loading-bars loading-sm"></span>
+                </>
+              ) : (
+                <>
+                  <FcGoogle />
+                  Login with Google
+                </>
+              )}
+            </button>
+          </form>
         </div>
       </div>
     </div>
