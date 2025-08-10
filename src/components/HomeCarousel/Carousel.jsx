@@ -24,7 +24,7 @@ const Carousel = ({ heading, img }) => {
         </div>
         <motion.div
           initial={{ x: 0 }}
-          whileInView={{ x: 120 }}
+          whileInView={{ x: 100 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           <button className="btn btn-secondary">
